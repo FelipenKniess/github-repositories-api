@@ -1,9 +1,9 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { useRouteMatch, Link} from 'react-router-dom';
 import api from '../../services/api';
-import {SequenceSpinner} from 'react-spinners-kit';
+import {RotateSpinner} from 'react-spinners-kit';
 
-import { TopPage, User, StatsRepository, Issues } from './styles';
+import { TopPage, User, StatsRepository, Issues, Loading} from './styles';
 import Logo from '../../assets/Logo.svg';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
@@ -71,6 +71,7 @@ const Repositorie:React.FC = () => {
                     <span>Voltar</span>
                 </Link>
             </TopPage>
+
             {repository ? (
                 <>
                     <User>
@@ -96,7 +97,9 @@ const Repositorie:React.FC = () => {
                     </StatsRepository>
                 </>
             ): (
-                <SequenceSpinner/>
+                <Loading>
+                    <RotateSpinner />
+                </Loading>
             )}
 
             <Issues>

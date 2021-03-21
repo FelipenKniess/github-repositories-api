@@ -112,3 +112,11 @@ export const Issues = styled.div`
     }
 
 `;
+
+export const Loading = styled.div`
+    div {
+        position:absolute;
+        top: 50%;
+        right: 50%;
+    }
+`;
